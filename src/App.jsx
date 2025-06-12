@@ -722,10 +722,10 @@ Currently, I'm further honing my backend and infrastructure skills exploring con
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <a href="mailto:edjay@example.com" className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
+            <a href="mailto:ejlindayao@gmail.com" className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
               <Mail className="text-green-400 mx-auto mb-4 group-hover:scale-110 transition-transform" size={48} />
               <h3 className="text-white font-semibold mb-2">Email</h3>
-              <p className="text-gray-400">edjay@example.com</p>
+              <p className="text-gray-400">ejlindayao@gmail.com</p>
             </a>
             
             <a href="https://linkedin.com/in/edjay" className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
@@ -734,7 +734,7 @@ Currently, I'm further honing my backend and infrastructure skills exploring con
               <p className="text-gray-400">Connect with me</p>
             </a>
             
-            <a href="https://github.com/edjay" className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
+            <a href="https://github.com/edge405" className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group">
               <Github className="text-purple-400 mx-auto mb-4 group-hover:scale-110 transition-transform" size={48} />
               <h3 className="text-white font-semibold mb-2">GitHub</h3>
               <p className="text-gray-400">Check out my code</p>
