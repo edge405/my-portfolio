@@ -27,6 +27,9 @@ import {
   Facebook,
 } from "lucide-react";
 import profileImage from "./assets/me.jpg";
+import sekyu from "./assets/sekyu.png";
+import ilocate from "./assets/ilocate.png";
+import ipeps from "./assets/ipeps.png";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -106,7 +109,7 @@ export default function App() {
       description:
         "Iloilo Province Employment Portal and Services (IPEPS) is a job-finding platform I worked on during my internship. Developed for the Public Employment Service Office (PESO), the system supports four user types: students, jobseekers, academe, and admin. Each user type has specific features tailored to their needs, making the platform efficient for connecting individuals to employment opportunities across Iloilo Province.",
       achievements: [
-        "Implemented secure user authentication and authorization",
+        "Structured the backend architecture",
         "Designed and optimized PostgreSQL database schemas",
         "Created over 30 APIs for this project",
       ],
@@ -166,32 +169,38 @@ export default function App() {
   const projects = [
     {
       id: 1,
-      title: "Multi-Course Thesis Management System",
+      title: "Sekyu",
       description:
-        "A comprehensive platform for managing thesis submissions, reviews, and approvals across multiple academic courses.",
+        "Sekyu is a fast-paced local PvP desktop game inspired by Capture the Flag, developed during a hackathon and designed for up to six players on a single PC.",
       longDescription:
         "This system streamlines the entire thesis lifecycle from proposal to final defense, featuring role-based access control, automated notifications, and document version management.",
-      tech: ["Python Flask", "PostgreSQL", "JavaScript", "HTML/CSS"],
+      tech: ["C#", "Unity", "Git", "Github"],
       status: "Completed",
-      category: "web",
+      category: "game",
       features: [
-        "User Authentication",
-        "Document Management",
-        "Role-based Access",
-        "Email Notifications",
+        "Local Multiplayer",
+        "Fast-Paced Action",
+        "Capture the Flag",
+        "Power ups",
       ],
-      github: "https://github.com/edjay", // Replace with actual URLs
-      live: "https://thesis-system.com", // Replace with actual URLs
-      image: "/api/placeholder/400/250",
+      github: "https://github.com/edge405", // Replace with actual URLs
+      // live: "https://thesis-system.com", // Replace with actual URLs
+      image: sekyu,
     },
     {
       id: 2,
-      title: "Personal Thesis Project",
+      title: "iLocate",
       description:
-        "An innovative thesis system developed as graduation requirement, showcasing advanced full-stack development skills.",
-      longDescription:
-        "Built with modern web technologies, this project demonstrates proficiency in both frontend and backend development with emphasis on user experience and system reliability.",
-      tech: ["React", "Python Flask", "PostgreSQL", "Postman"],
+        "iLocate is a web app that finds nearby boarding houses in Iloilo City using the Haversine algorithm.",
+      tech: [
+        "React",
+        "Tailwind",
+        "Express",
+        "Mysql",
+        "Postman",
+        "Git",
+        "Github",
+      ],
       status: "Completed",
       category: "web",
       features: [
@@ -199,71 +208,84 @@ export default function App() {
         "API Testing",
         "Database Optimization",
         "Responsive Design",
+        "Geolocation Search",
+        "Role-based Access Control",
+        "Document Upload System",
+        "User Authentication",
+        "Admin Verification",
       ],
       github: "https://github.com/edge405",
-      live: "https://personal-thesis.com",
-      image: "/api/placeholder/400/250",
+      // live: "https://personal-thesis.com",
+      image: ilocate,
     },
     {
       id: 3,
-      title: "DevOps Learning Lab",
+      title: "IPEPS",
       description:
-        "A collection of DevOps experiments and learning projects including containerization and automation scripts.",
-      longDescription:
-        "Personal playground for learning DevOps tools and practices, featuring Docker containers, automation scripts, and cloud deployment examples.",
-      tech: ["Docker", "Linux", "Bash", "AWS"],
-      status: "In Progress",
-      category: "devops",
-      features: [
-        "Containerization",
-        "Automation",
-        "Cloud Deployment",
-        "Monitoring",
+        "A job portal for PESO Iloilo City that offers job postings, training programs, scholarship listings, and an administrative analytics dashboard for efficient management and insights.",
+      tech: [
+        "React",
+        "Tailwind",
+        "Python Flask",
+        "PostgreSQL",
+        "Postman",
+        "Git",
+        "Github",
       ],
-      github: "https://github.com/edjay",
-      live: "https://devops-lab.com",
-      image: "/api/placeholder/400/250",
-    },
-    {
-      id: 4,
-      title: "Multi-Course Thesis Management System",
-      description:
-        "A comprehensive platform for managing thesis submissions, reviews, and approvals across multiple academic courses.",
-      longDescription:
-        "This system streamlines the entire thesis lifecycle from proposal to final defense, featuring role-based access control, automated notifications, and document version management.",
-      tech: ["Python Flask", "PostgreSQL", "JavaScript", "HTML/CSS"],
       status: "Completed",
       category: "web",
       features: [
+        "Job Postings",
+        "Training Programs",
+        "Scholarship Listings",
+        "Admin Analytics Dashboard",
         "User Authentication",
-        "Document Management",
-        "Role-based Access",
-        "Email Notifications",
+        "Role-based Access Control",
+        "Document Upload System",
+        "Admin Verification",
       ],
-      github: "https://github.com/edjay", // Replace with actual URLs
-      live: "https://thesis-system.com", // Replace with actual URLs
-      image: "/api/placeholder/400/250",
+      github: "https://github.com/edge405",
+      live: "https://ipeps-qq7m.vercel.app/",
+      image: ipeps,
     },
-    {
-      id: 5,
-      title: "Multi-Course Thesis Management System",
-      description:
-        "A comprehensive platform for managing thesis submissions, reviews, and approvals across multiple academic courses.",
-      longDescription:
-        "This system streamlines the entire thesis lifecycle from proposal to final defense, featuring role-based access control, automated notifications, and document version management.",
-      tech: ["Python Flask", "PostgreSQL", "JavaScript", "HTML/CSS"],
-      status: "Completed",
-      category: "web",
-      features: [
-        "User Authentication",
-        "Document Management",
-        "Role-based Access",
-        "Email Notifications",
-      ],
-      github: "https://github.com/edjay", // Replace with actual URLs
-      live: "https://thesis-system.com", // Replace with actual URLs
-      image: "/api/placeholder/400/250",
-    },
+    // {
+    //   id: 4,
+    //   title: "Multi-Course Thesis Management System",
+    //   description:
+    //     "A comprehensive platform for managing thesis submissions, reviews, and approvals across multiple academic courses.",
+    //   tech: ["Python Flask", "PostgreSQL", "JavaScript", "HTML/CSS"],
+    //   status: "Completed",
+    //   category: "web",
+    //   features: [
+    //     "User Authentication",
+    //     "Document Management",
+    //     "Role-based Access",
+    //     "Email Notifications",
+    //   ],
+    //   github: "https://github.com/edjay", // Replace with actual URLs
+    //   live: "https://thesis-system.com", // Replace with actual URLs
+    //   image: "/api/placeholder/400/250",
+    // },
+    // {
+    //   id: 5,
+    //   title: "Multi-Course Thesis Management System",
+    //   description:
+    //     "A comprehensive platform for managing thesis submissions, reviews, and approvals across multiple academic courses.",
+    //   longDescription:
+    //     "This system streamlines the entire thesis lifecycle from proposal to final defense, featuring role-based access control, automated notifications, and document version management.",
+    //   tech: ["Python Flask", "PostgreSQL", "JavaScript", "HTML/CSS"],
+    //   status: "Completed",
+    //   category: "web",
+    //   features: [
+    //     "User Authentication",
+    //     "Document Management",
+    //     "Role-based Access",
+    //     "Email Notifications",
+    //   ],
+    //   github: "https://github.com/edjay", // Replace with actual URLs
+    //   live: "https://thesis-system.com", // Replace with actual URLs
+    //   image: "/api/placeholder/400/250",
+    // },
   ];
 
   const blogPosts = [
@@ -333,7 +355,7 @@ export default function App() {
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
 
-  const categories = ["all", "web", "devops"];
+  const categories = ["all", "web", "game"];
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -787,7 +809,6 @@ export default function App() {
               ))}
             </div>
           </div>
-
           <div className="overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-thin scrollbar-thumb-purple-500/50 scrollbar-track-transparent hover:scrollbar-thumb-purple-500/70 pb-4">
             <div className="flex gap-6 w-max">
               {filteredProjects.map((project) => (
@@ -795,10 +816,36 @@ export default function App() {
                   key={project.id}
                   className="bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 group hover:bg-white/10 transition-all flex-shrink-0 w-80"
                 >
-                  <div className="h-48 bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
-                    <div className="text-6xl text-white/20">
-                      {project.category === "web" ? <Code /> : <Server />}
-                    </div>
+                  <div className="h-48 relative overflow-hidden bg-gray-900/50">
+                    {project.image ? (
+                      <>
+                        <img
+                          src={project.image}
+                          alt={`${project.title} screenshot`}
+                          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                          onError={(e) => {
+                            // Fallback to gradient background if image fails to load
+                            e.target.style.display = "none";
+                            e.target.nextElementSibling.style.display = "flex";
+                          }}
+                        />
+                        {/* Fallback gradient background */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 items-center justify-center hidden">
+                          <div className="text-6xl text-white/20">
+                            {project.category === "web" ? <Code /> : <Server />}
+                          </div>
+                        </div>
+                        {/* Overlay for better text readability on hover */}
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </>
+                    ) : (
+                      /* Default gradient background when no image is provided */
+                      <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                        <div className="text-6xl text-white/20">
+                          {project.category === "web" ? <Code /> : <Server />}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
@@ -960,7 +1007,7 @@ export default function App() {
             </a>
 
             <a
-              href="https://linkedin.com/in/edjay"
+              href="https://linkedin.com/in/edjay404/"
               className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group"
             >
               <Linkedin
