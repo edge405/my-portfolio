@@ -30,6 +30,7 @@ import profileImage from "./assets/me.jpg";
 import sekyu from "./assets/sekyu.png";
 import ilocate from "./assets/ilocate.png";
 import ipeps from "./assets/ipeps.png";
+import sendEmail from "./services/email_service";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -1035,28 +1036,36 @@ export default function App() {
             <h3 className="text-2xl font-bold text-white mb-6">
               Quick Contact Form
             </h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={sendEmail}>
               <div className="grid md:grid-cols-2 gap-6">
                 <input
                   type="text"
                   placeholder="Your Name"
+                  name="name"
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                  required
                 />
                 <input
                   type="email"
                   placeholder="Your Email"
+                  name="email"
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                  required
                 />
               </div>
               <input
                 type="text"
                 placeholder="Subject"
+                name="title"
                 className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                required
               />
               <textarea
                 rows="5"
                 placeholder="Your Message"
+                name="message"
                 className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors resize-none"
+                required
               ></textarea>
               <button
                 type="submit"
