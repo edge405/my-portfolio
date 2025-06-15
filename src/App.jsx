@@ -47,32 +47,31 @@ export default function App() {
     try {
       const formData = new FormData(e.target);
 
-      const response = await fetch(
-        "https://formsubmit.co/ajax/ejlindayao@gmail.com",
-        {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
+      // Use your verified endpoint
+      const response = await fetch("https://formsubmit.co/el/firiru", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
       const result = await response.json();
 
-      if (response.ok && result.success === "true") {
+      if (response.ok && result.success) {
         e.target.reset();
         alert("Message sent successfully!");
         // Optional: Redirect to thank you page
         // window.location.href = "https://www.edjay.life/thank-you";
       } else {
-        throw new Error(result.message || "Failed to send message");
+        throw new Error(result.message || "Form submission failed");
       }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("Error:", error);
       alert(
         `Error: ${
-          error.message || "Failed to send message. Please try again later."
+          error.message ||
+          "Failed to send message. Please email me directly at ejlindayao@gmail.com"
         }`
       );
     } finally {
