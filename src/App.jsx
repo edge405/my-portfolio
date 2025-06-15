@@ -47,31 +47,33 @@ export default function App() {
     try {
       const formData = new FormData(e.target);
 
+      // Add these additional headers
       const response = await fetch(
-        "https://formsubmit.co/ejlindayao@gmail.com",
+        "https://formsubmit.co/ajax/ejlindayao@gmail.com",
         {
           method: "POST",
           body: formData,
+          headers: {
+            Accept: "application/json",
+          },
         }
       );
 
-      if (response.ok) {
-        // Reset form
+      const data = await response.json();
+
+      if (data.success === "true") {
         e.target.reset();
-        // You could add a success message here
         alert("Message sent successfully!");
       } else {
         alert("Failed to send message. Please try again.");
       }
     } catch (error) {
-      console.log(error);
-
+      console.error("Error:", error);
       alert("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
-
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -1079,8 +1081,9 @@ export default function App() {
               <input
                 type="hidden"
                 name="_next"
-                value="https://www.edjay.life/"
+                value="https://www.edjay.life/thank-you"
               />
+              <input type="hidden" name="_template" value="table" />
 
               <div className="grid md:grid-cols-2 gap-6">
                 <input
