@@ -47,17 +47,13 @@ export default function App() {
     try {
       const formData = new FormData(e.target);
 
-      // Add FormSubmit parameters
+      // Use your assigned token
       formData.append("_captcha", "false");
       formData.append("_template", "table");
-      formData.append(
-        "_next",
-        "https://www.edjay.life/#contact-form?success=true"
-      );
+      formData.append("_next", "https://www.edjay.life/#contact-form");
 
-      // Use your email directly in the endpoint
       const response = await fetch(
-        "https://formsubmit.co/ajax/ejlindayao@gmail.com",
+        "https://formsubmit.co/ajax/d6ce4f99b05adb806d56213759384186",
         {
           method: "POST",
           body: formData,
@@ -82,7 +78,7 @@ export default function App() {
     } catch (error) {
       console.error("Error:", error);
       alert(
-        `Failed to send message. Please email me directly at ejlindayao@gmail.com. Error: ${error.message}`
+        `Failed to send message. Please email me directly at ejlindayao@gmail.com`
       );
     } finally {
       setIsSubmitting(false);
@@ -1181,19 +1177,6 @@ export default function App() {
                 </button>
               </div>
             </form>
-
-            {/* Fallback option
-            <div className="mt-6 text-center">
-              <p className="text-gray-400">
-                Having trouble with the form? Email me directly at{" "}
-                <a
-                  href="mailto:ejlindayao@gmail.com"
-                  className="text-purple-400 underline"
-                >
-                  ejlindayao@gmail.com
-                </a>
-              </p>
-            </div>*/}
           </div>
         </div>
       </section>
