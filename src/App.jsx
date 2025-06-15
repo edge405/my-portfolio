@@ -47,32 +47,42 @@ export default function App() {
     try {
       const formData = new FormData(e.target);
 
-      // Use your verified endpoint
-      const response = await fetch("https://formsubmit.co/el/firiru", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
+      // Add FormSubmit parameters
+      formData.append("_captcha", "false");
+      formData.append("_template", "table");
+      formData.append(
+        "_next",
+        "https://www.edjay.life/#contact-form?success=true"
+      );
+
+      // Use your email directly in the endpoint
+      const response = await fetch(
+        "https://formsubmit.co/ajax/ejlindayao@gmail.com",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Server responded with status: ${response.status}`);
+      }
 
       const result = await response.json();
 
-      if (response.ok && result.success) {
+      if (result.success) {
         e.target.reset();
         alert("Message sent successfully!");
-        // Optional: Redirect to thank you page
-        // window.location.href = "https://www.edjay.life/thank-you";
       } else {
         throw new Error(result.message || "Form submission failed");
       }
     } catch (error) {
       console.error("Error:", error);
       alert(
-        `Error: ${
-          error.message ||
-          "Failed to send message. Please email me directly at ejlindayao@gmail.com"
-        }`
+        `Failed to send message. Please email me directly at ejlindayao@gmail.com. Error: ${error.message}`
       );
     } finally {
       setIsSubmitting(false);
@@ -1033,8 +1043,7 @@ export default function App() {
             conversations about technology. Whether you want to discuss a
             project or just say hello, feel free to reach out!
           </p>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div id="contact-form" className="grid md:grid-cols-3 gap-8 mb-12">
             <a
               href="mailto:ejlindayao@gmail.com"
               className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all group"
@@ -1071,7 +1080,6 @@ export default function App() {
               <p className="text-gray-400">Check out my code</p>
             </a>
           </div>
-
           <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-6">
               Quick Contact Form
@@ -1079,16 +1087,11 @@ export default function App() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Required hidden fields */}
               <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_subject"
-                value="New message from edjay.life portfolio!"
-              />
               <input type="hidden" name="_template" value="table" />
               <input
                 type="hidden"
                 name="_next"
-                value="https://www.edjay.life/"
+                value="https://www.edjay.life/#contact-form"
               />
               <input
                 type="hidden"
@@ -1121,7 +1124,7 @@ export default function App() {
               <input
                 type="text"
                 placeholder="Subject"
-                name="_subject" // Using both for compatibility
+                name="_subject"
                 disabled={isSubmitting}
                 className={`w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
@@ -1178,6 +1181,19 @@ export default function App() {
                 </button>
               </div>
             </form>
+
+            {/* Fallback option
+            <div className="mt-6 text-center">
+              <p className="text-gray-400">
+                Having trouble with the form? Email me directly at{" "}
+                <a
+                  href="mailto:ejlindayao@gmail.com"
+                  className="text-purple-400 underline"
+                >
+                  ejlindayao@gmail.com
+                </a>
+              </p>
+            </div>*/}
           </div>
         </div>
       </section>
