@@ -47,7 +47,6 @@ export default function App() {
     try {
       const formData = new FormData(e.target);
 
-      // Add these additional headers
       const response = await fetch(
         "https://formsubmit.co/ajax/ejlindayao@gmail.com",
         {
@@ -59,21 +58,28 @@ export default function App() {
         }
       );
 
-      const data = await response.json();
+      const result = await response.json();
 
-      if (data.success === "true") {
+      if (response.ok && result.success === "true") {
         e.target.reset();
         alert("Message sent successfully!");
+        // Optional: Redirect to thank you page
+        // window.location.href = "https://www.edjay.life/thank-you";
       } else {
-        alert("Failed to send message. Please try again.");
+        throw new Error(result.message || "Failed to send message");
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("Failed to send message. Please try again.");
+      console.error("Submission error:", error);
+      alert(
+        `Error: ${
+          error.message || "Failed to send message. Please try again later."
+        }`
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -1072,18 +1078,24 @@ export default function App() {
               Quick Contact Form
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Required hidden fields */}
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
                 name="_subject"
-                value="New message from portfolio site!"
+                value="New message from edjay.life portfolio!"
               />
+              <input type="hidden" name="_template" value="table" />
               <input
                 type="hidden"
                 name="_next"
-                value="https://www.edjay.life/thank-you"
+                value="https://www.edjay.life/"
               />
-              <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for your message! I'll get back to you soon."
+              />
 
               <div className="grid md:grid-cols-2 gap-6">
                 <input
@@ -1110,7 +1122,7 @@ export default function App() {
               <input
                 type="text"
                 placeholder="Subject"
-                name="title"
+                name="_subject" // Using both for compatibility
                 disabled={isSubmitting}
                 className={`w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
