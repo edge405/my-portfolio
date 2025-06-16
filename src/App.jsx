@@ -25,11 +25,15 @@ import {
   Users,
   Zap,
   Facebook,
+  Terminal,
+  Heart,
 } from "lucide-react";
 import profileImage from "./assets/me.jpg";
 import sekyu from "./assets/sekyu.png";
 import ilocate from "./assets/ilocate.png";
 import ipeps from "./assets/ipeps.png";
+import pts from "./assets/pts.png";
+import sagapai from "./assets/sagapai.png";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -204,6 +208,19 @@ export default function App() {
         "Postman",
       ],
     },
+    {
+      role: "Programmer",
+      company: "Odyssey Festival",
+      period: "28 days",
+      type: "Hackathon",
+      description:
+        "Sekyu is an exciting, fast-paced local PvP desktop game inspired by the traditional Filipino Capture the Flag. Developed during a hackathon, it offers thrilling one-on-one gameplay where each player skillfully controls three characters on a single PC, promising engaging and competitive matches that keep players on the edge of their seats.",
+      achievements: [
+        "Implemented the game logic and mechanics",
+        "Integrated the design and animations for a smooth gaming experience",
+      ],
+      tech: ["Python Flask", "React", "PostgreSQL", "Postman", "Git", "Github"],
+    },
   ];
 
   const [showAll, setShowAll] = useState(false);
@@ -213,14 +230,13 @@ export default function App() {
     ? experiences
     : experiences.slice(0, INITIAL_ITEMS);
   const hasMoreItems = experiences.length > INITIAL_ITEMS;
+
   const projects = [
     {
       id: 1,
       title: "Sekyu",
       description:
-        "Sekyu is a fast-paced local PvP desktop game inspired by Capture the Flag, developed during a hackathon and designed for up to six players on a single PC.",
-      longDescription:
-        "This system streamlines the entire thesis lifecycle from proposal to final defense, featuring role-based access control, automated notifications, and document version management.",
+        "Sekyu is a fast-paced local PvP desktop game inspired by Capture the Flag, developed during a hackathon it features one-on-one gameplay where each player controls three characters on a single PC.",
       tech: ["C#", "Unity", "Git", "Github"],
       status: "Completed",
       category: "game",
@@ -295,44 +311,49 @@ export default function App() {
       live: "https://ipeps-qq7m.vercel.app/",
       image: ipeps,
     },
-    // {
-    //   id: 4,
-    //   title: "Multi-Course Thesis Management System",
-    //   description:
-    //     "A comprehensive platform for managing thesis submissions, reviews, and approvals across multiple academic courses.",
-    //   tech: ["Python Flask", "PostgreSQL", "JavaScript", "HTML/CSS"],
-    //   status: "Completed",
-    //   category: "web",
-    //   features: [
-    //     "User Authentication",
-    //     "Document Management",
-    //     "Role-based Access",
-    //     "Email Notifications",
-    //   ],
-    //   github: "https://github.com/edjay", // Replace with actual URLs
-    //   live: "https://thesis-system.com", // Replace with actual URLs
-    //   image: "/api/placeholder/400/250",
-    // },
-    // {
-    //   id: 5,
-    //   title: "Multi-Course Thesis Management System",
-    //   description:
-    //     "A comprehensive platform for managing thesis submissions, reviews, and approvals across multiple academic courses.",
-    //   longDescription:
-    //     "This system streamlines the entire thesis lifecycle from proposal to final defense, featuring role-based access control, automated notifications, and document version management.",
-    //   tech: ["Python Flask", "PostgreSQL", "JavaScript", "HTML/CSS"],
-    //   status: "Completed",
-    //   category: "web",
-    //   features: [
-    //     "User Authentication",
-    //     "Document Management",
-    //     "Role-based Access",
-    //     "Email Notifications",
-    //   ],
-    //   github: "https://github.com/edjay", // Replace with actual URLs
-    //   live: "https://thesis-system.com", // Replace with actual URLs
-    //   image: "/api/placeholder/400/250",
-    // },
+    {
+      id: 4,
+      title: "Senior Citizen Pension Tracking System",
+      description:
+        "A web system for Pianda-an Sur, Alimodian that manages senior records and tracks pension payouts for transparency and efficiency.",
+      tech: [
+        "Python Flask",
+        "PostgreSQL",
+        "React",
+        "Tailwind",
+        "Git",
+        "Github",
+        "Postman",
+      ],
+      status: "Completed",
+      category: "web",
+      features: [
+        "User Authentication",
+        "Image Upload",
+        "Role-based Access",
+        "Notifications",
+      ],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      live: "https://pension-tracking-system-frontend.vercel.app/", // Replace with actual URLs
+      image: pts,
+    },
+    {
+      id: 5,
+      title: "SAGAP.ai",
+      description:
+        "An AI-powered web app that uses NLP to match projects with suitable consultants by analyzing expertise and requirements, streamlining the selection process. This was our project for a 24-hour Western Visayas AI hackathon, where we won 2nd place.",
+      tech: ["Python Flask", "Tailwind", "JavaScript", "HTML/CSS"],
+      status: "Completed",
+      category: "web",
+      features: [
+        "AI-Powered Matching",
+        "Ranked Consultant Profiles",
+        "Simple, User-Friendly Interface",
+      ],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      // live: "https://thesis-system.com", // Replace with actual URLs
+      image: sagapai,
+    },
   ];
 
   const blogPosts = [
@@ -679,20 +700,28 @@ export default function App() {
                     projects
                   </span>
                 </div>
-                {/* <div className="flex items-center">
+                <div className="flex items-center">
                   <Award className="text-green-400 mr-3" size={20} />
                   <span className="text-gray-300">
                     Fresh Computer Science Graduate
                   </span>
-                </div> */}
+                </div>
                 <div className="flex items-center">
                   <Coffee className="text-yellow-400 mr-3" size={20} />
                   <span className="text-gray-300">
                     Powered by coffee and curiosity
                   </span>
                 </div>
+                <div className="flex items-center">
+                  <Heart className="text-pink-400 mr-3" size={20} />
+                  <span className="text-gray-300">Loves cats</span>
+                </div>
+                <div className="flex items-center">
+                  <Terminal className="text-cyan-400 mr-3" size={20} />
+                  <span className="text-gray-300">Frontend vibe coder</span>
+                </div>
               </div>
-            </div>
+            </div>{" "}
           </div>
         </div>
       </section>
