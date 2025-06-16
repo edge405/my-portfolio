@@ -1249,7 +1249,7 @@ export default function App() {
             </div>
             <div className="border-t border-white/10 pt-8">
               <p className="text-gray-500 text-sm">
-                © 2024 Edjay Lindayao. Built with React and lots of ☕. All
+                © 2025 Edjay Lindayao. Built with React and lots of ☕. All
                 rights reserved.
               </p>
             </div>
