@@ -34,6 +34,7 @@ import ilocate from "./assets/ilocate.png";
 import ipeps from "./assets/ipeps.png";
 import pts from "./assets/pts.png";
 import sagapai from "./assets/sagapai.png";
+import konekta from "./assets/konekta.png";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -353,6 +354,23 @@ export default function App() {
       github: "https://github.com/edge405", // Replace with actual URLs
       // live: "https://thesis-system.com", // Replace with actual URLs
       image: sagapai,
+    },
+    {
+      id: 6,
+      title: "Konekta",
+      description:
+        "KONEK TA is a Hiligaynon word meaning 'Let's Connect.' It is a social media platform designed to bring users together based on shared interests. Unlike traditional social networks that emphasize broad connections, KONEK TA focuses on interest-based networking, enabling users to discover like-minded individuals, exchange ideas, and engage in meaningful discussions.",
+      tech: ["Python Flask", "Tailwind", "React", "Git", "Github"],
+      status: "On Going",
+      category: "web",
+      features: [
+        "Interest-Based Networking",
+        "Content Creation & Engagement",
+        "User Control & Moderation",
+      ],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      // live: "https://thesis-system.com", // Replace with actual URLs
+      image: konekta,
     },
   ];
 
@@ -1229,19 +1247,19 @@ export default function App() {
             </p>
             <div className="flex justify-center space-x-6 mb-8">
               <a
-                href="https://github.com/edjay"
+                href="https://github.com/edge405"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com/in/edjay"
+                href="https://linkedin.com/in/edjay404"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:edjay@example.com"
+                href="mailto:ejlindayao@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Mail size={24} />
@@ -1249,8 +1267,8 @@ export default function App() {
             </div>
             <div className="border-t border-white/10 pt-8">
               <p className="text-gray-500 text-sm">
-                © 2025 Edjay Lindayao. Built with React and lots of ☕. All
-                rights reserved.
+                © 2025 Edjay Lindayao. Built with Vite + React and lots of ☕.
+                All rights reserved.
               </p>
             </div>
           </div>
