@@ -137,18 +137,18 @@ export default function App() {
   };
 
   const skills = [
-    { name: "Python Flask", icon: Code, level: 90, category: "Backend" },
-    { name: "React", icon: Code, level: 70, category: "Frontend" },
-    { name: "JavaScript", icon: Code, level: 85, category: "Frontend" },
-    { name: "PostgreSQL", icon: Database, level: 80, category: "Database" },
-    { name: "Postman", icon: Server, level: 85, category: "Tools" },
-    { name: "Git", icon: Code, level: 85, category: "Tools" },
-    { name: "Github", icon: Github, level: 85, category: "Tools" },
-    { name: "MySQL", icon: Database, level: 70, category: "Database" },
-    { name: "Java Spring boot", icon: Code, level: 55, category: "Backend" },
-    { name: "PHP", icon: Code, level: 85, category: "Fullstack" },
-    { name: "C#", icon: Code, level: 65, category: "Game development" },
-    { name: "Unity", icon: Server, level: 85, category: "Tools" },
+    { name: "Python Flask", icon: Code, category: "Backend" },
+    { name: "React", icon: Code, category: "Frontend" },
+    { name: "JavaScript", icon: Code, category: "Frontend" },
+    { name: "PostgreSQL", icon: Database, category: "Database" },
+    { name: "Postman", icon: Server, category: "Tools" },
+    { name: "Git", icon: Code, category: "Tools" },
+    { name: "Github", icon: Github, category: "Tools" },
+    { name: "MySQL", icon: Database, category: "Database" },
+    { name: "Java Spring boot", icon: Code, category: "Backend" },
+    { name: "PHP", icon: Code, category: "Fullstack" },
+    { name: "C#", icon: Code, category: "Game development" },
+    { name: "Unity", icon: Server, category: "Tools" },
   ];
 
   const experiences = [
@@ -219,7 +219,7 @@ export default function App() {
         "Implemented the game logic and mechanics",
         "Integrated the design and animations for a smooth gaming experience",
       ],
-      tech: ["Python Flask", "React", "PostgreSQL", "Postman", "Git", "Github"],
+      tech: ["Unity", "C#", "Git", "Github"],
     },
   ];
 
@@ -451,7 +451,6 @@ export default function App() {
           }}
         ></div>
       </div>
-
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-black/70 backdrop-blur-lg border-b border-white/10 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -534,7 +533,6 @@ export default function App() {
           )}
         </div>
       </nav>
-
       {/* Hero Section */}
       <section
         id="home"
@@ -627,7 +625,6 @@ export default function App() {
           </div>
         </div>
       </section>
-
       {/* About Section */}
       <section id="about" className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
@@ -725,7 +722,6 @@ export default function App() {
           </div>
         </div>
       </section>
-
       {/* Experience Section */}
       <section id="experience" className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
@@ -827,36 +823,49 @@ export default function App() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-purple-400">
             Skills & Technologies
           </h2>
+
+          {/* Optional: Skills by Category */}
+          <div className="my-16">
+            <div className="flex flex-wrap justify-center gap-4">
+              {[...new Set(skills.map((skill) => skill.category))].map(
+                (category, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full text-purple-300 text-sm border border-purple-400/30 hover:border-purple-400/50 transition-all cursor-pointer"
+                  >
+                    {category}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Skills Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 group hover:bg-white/10 transition-all"
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 group hover:bg-white/10 hover:border-purple-400/30 transition-all duration-300 hover:transform hover:scale-105"
               >
-                <div className="flex items-center mb-4">
-                  <skill.icon className="text-purple-400 mr-3" size={28} />
+                <div className="flex items-center">
+                  <skill.icon
+                    className="text-purple-400 mr-4 group-hover:text-blue-400 transition-colors"
+                    size={32}
+                  />
                   <div>
-                    <h3 className="text-white font-semibold text-lg">
+                    <h3 className="text-white font-semibold text-lg group-hover:text-purple-300 transition-colors">
                       {skill.name}
                     </h3>
-                    <p className="text-gray-400 text-sm">{skill.category}</p>
+                    <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+                      {skill.category}
+                    </p>
                   </div>
                 </div>
-                <div className="w-full bg-gray-700 rounded-full h-2">
-                  <div
-                    className="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full transition-all duration-1000 group-hover:from-purple-400 group-hover:to-blue-400"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
-                <p className="text-gray-300 text-sm mt-2 text-right">
-                  {skill.level}%
-                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* Projects Section */}
       <section id="projects" className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
@@ -983,7 +992,6 @@ export default function App() {
           </div>
         </div>
       </section>
-
       {/* Blog Section */}
       <section id="blog" className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
@@ -1056,7 +1064,6 @@ export default function App() {
           )}
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="relative py-20 px-4 z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -1209,7 +1216,6 @@ export default function App() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="relative py-12 px-4 z-10 border-t border-white/10">
         <div className="max-w-6xl mx-auto">
@@ -1250,7 +1256,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-
       {/* Custom Styles */}
       <style jsx>{`
         @keyframes spin-slow {
