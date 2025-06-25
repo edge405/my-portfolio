@@ -8,7 +8,7 @@ import {
   Calendar,
   ArrowRight,
   Download,
-  ChevronDown 
+  ChevronDown,
 } from "lucide-react";
 import profileImage from "../assets/me.jpg";
 
@@ -19,6 +19,25 @@ export default function HeroSection({ scrollToSection }) {
     { label: "Coffee Consumed", value: "500+", icon: Coffee },
     { label: "Lines of Code", value: "20K+", icon: Zap },
   ];
+
+  const handleDownloadResume = () => {
+    // Path to your resume file in the public folder
+
+    const resumeUrl = "/EDJAY-RESUME.pdf";
+
+    // Create an anchor element
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+
+    // This suggests the filename for the download
+    link.download = "EDJAY-RESUME.pdf"; // Change this to your preferred filename
+
+    // Append to the DOM, trigger click, then remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section
       id="home"
@@ -93,7 +112,7 @@ export default function HeroSection({ scrollToSection }) {
             />
           </button>
           <button
-            onClick={() => scrollToSection("contact")}
+            onClick={handleDownloadResume}
             className="border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all hover:scale-105 flex items-center justify-center cursor-pointer"
           >
             <Download className="mr-2" size={20} />
