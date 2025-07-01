@@ -43,7 +43,6 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -191,7 +190,7 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Custom Styles */}
+      {/* Custom Styles
       <style jsx>{`
         @keyframes spin-slow {
           from {
@@ -207,12 +206,12 @@ export default function App() {
         .text-transparent {
           -webkit-text-fill-color: transparent;
         }
-        /* Smooth scrolling for the entire page */
+
         html {
           scroll-behavior: smooth;
         }
 
-        /* Custom scrollbar */
+
         ::-webkit-scrollbar {
           width: 8px;
         }
@@ -226,7 +225,7 @@ export default function App() {
         ::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(to bottom, #7c3aed, #2563eb);
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 }

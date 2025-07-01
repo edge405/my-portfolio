@@ -48,7 +48,7 @@ export default function SkillsSection() {
             >
               <div className="flex items-center">
                 <skill.icon
-                  className="text-purple-400 mr-4 group-hover:text-blue-400 transition-colors"
+                  className="text-purple-400 mr-4 transition-colors"
                   size={32}
                 />
                 <div>
