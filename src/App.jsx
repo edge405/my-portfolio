@@ -176,21 +176,17 @@ export default function App() {
       <AboutSection />
       {/* Experience Section */}
       <ExperienceSection />
-
       {/* Skills Section */}
       <SkillsSection />
-
       {/* Projects Section */}
       <ProjectsSection />
-
       {/* Blog Section */}
       <BlogSection />
       {/* Contact Section */}
       <ContactSection handleSubmit={handleSubmit} isSubmitting={isSubmitting} />
       {/* Footer */}
       <Footer />
-
-      {/* Custom Styles
+      {/* Custom Styles */}
       <style jsx>{`
         @keyframes spin-slow {
           from {
@@ -211,7 +207,6 @@ export default function App() {
           scroll-behavior: smooth;
         }
 
-
         ::-webkit-scrollbar {
           width: 8px;
         }
@@ -225,7 +220,7 @@ export default function App() {
         ::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(to bottom, #7c3aed, #2563eb);
         }
-      `}</style> */}
+      `}</style>
     </div>
   );
 }

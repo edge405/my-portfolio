@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { Code, Server, Github, ExternalLink } from "lucide-react";
+import { Code, Server, Github, ExternalLink, FolderOpen } from "lucide-react";
 import sekyu from "../assets/sekyu.png";
 import ilocate from "../assets/ilocate.png";
 import ipeps from "../assets/ipeps.png";
 import pts from "../assets/pts.png";
 import sagapai from "../assets/sagapai.png";
 import konekta from "../assets/konekta.png";
+import running_blog from "../assets/running-blog.png";
+import coding_challenge from "../assets/coding-challenge.png";
+import k_fashion from "../assets/k-fashion.png";
 
 export default function ProjectsSection() {
   const projects = [
@@ -148,6 +151,57 @@ export default function ProjectsSection() {
       // live: "https://thesis-system.com", // Replace with actual URLs
       image: konekta,
     },
+    {
+      id: 7,
+      title: "Running Blog",
+      description:
+        "A blogging platform for my classmate to share his running journey. It features user authentication, a like and comment system, and two user roles: regular users (can like and comment) and admins (can create and manage blog posts).",
+      tech: ["PHP", "HTML", "CSS", "Javascript", "MySQL", "Git", "Github"],
+      status: "Completed",
+      category: "web",
+      features: [
+        "Blog Post Editor",
+        "Interactive Comments Section",
+        "Like System",
+      ],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      // live: "https://thesis-system.com", // Replace with actual URLs
+      image: running_blog,
+    },
+    {
+      id: 8,
+      title: "Cracking a Coding Challenge",
+      description:
+        "A personal project website blog where I tackled a coding challenge to improve my problem-solving skills.",
+      tech: ["PHP", "HTML", "CSS", "MySQL", "Git", "Github"],
+      status: "Completed",
+      category: "web",
+      features: [
+        "Manage Blog Post",
+        "Interactive Comments Section",
+        "Like System",
+      ],
+      github: "https://github.com/edge405",
+      live: "https://ejlindayao.ct.ws/",
+      image: coding_challenge,
+    },
+    {
+      id: 9,
+      title: "K-Fashion",
+      description:
+        "A blogging platform for fashion enthusiasts to share their style journeys.",
+      tech: ["PHP", "HTML", "CSS", "MySQL", "Git", "Github"],
+      status: "Completed",
+      category: "web",
+      features: [
+        "Blog Post Editor",
+        "Interactive Comments Section",
+        "Like System",
+      ],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      // live: "https://thesis-system.com", // Replace with actual URLs
+      image: k_fashion,
+    },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -156,6 +210,11 @@ export default function ProjectsSection() {
     selectedCategory === "all"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
+
+  // Calculate project counts
+  const totalProjects = projects.length;
+  const webProjects = projects.filter((p) => p.category === "web").length;
+  const gameProjects = projects.filter((p) => p.category === "game").length;
 
   return (
     <section id="projects" className="relative py-20 px-4 z-10">
@@ -180,11 +239,19 @@ export default function ProjectsSection() {
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                {category}
+                {category} (
+                {category === "all"
+                  ? totalProjects
+                  : category === "web"
+                  ? webProjects
+                  : gameProjects}
+                )
               </button>
             ))}
           </div>
         </div>
+
+        {/* Projects Display */}
         <div className="overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-thin scrollbar-thumb-purple-500/50 scrollbar-track-transparent hover:scrollbar-thumb-purple-500/70 pb-4">
           <div className="flex gap-6 w-max">
             {filteredProjects.map((project) => (

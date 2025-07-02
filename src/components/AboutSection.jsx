@@ -6,8 +6,8 @@ import {
   Code,
   Award,
   Coffee,
-  Heart,
   Terminal,
+  Cat,
 } from "lucide-react";
 
 export default function AboutSection() {
@@ -86,19 +86,20 @@ export default function AboutSection() {
                 </span>
               </div>
               <div className="flex items-center">
+                <Cat className="text-pink-400 mr-3" size={20} />
+                <span className="text-gray-300">Cat lover</span>
+              </div>
+              <div className="flex items-center">
                 <Coffee className="text-yellow-400 mr-3" size={20} />
                 <span className="text-gray-300">
                   Powered by coffee and curiosity
                 </span>
               </div>
-              <div className="flex items-center">
-                <Heart className="text-pink-400 mr-3" size={20} />
-                <span className="text-gray-300">Loves cats</span>
-              </div>
-              <div className="flex items-center">
+
+              {/* <div className="flex items-center">
                 <Terminal className="text-cyan-400 mr-3" size={20} />
                 <span className="text-gray-300">Frontend vibe coder</span>
-              </div>
+              </div> */}
             </div>
           </div>{" "}
         </div>
