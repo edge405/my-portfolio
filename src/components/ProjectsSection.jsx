@@ -9,6 +9,8 @@ import konekta from "../assets/konekta.png";
 import running_blog from "../assets/running-blog.png";
 import coding_challenge from "../assets/coding-challenge.png";
 import k_fashion from "../assets/k-fashion.png";
+import budget_ease from "../assets/budget-ease.png";
+import water_wise from "../assets/water-wise.png";
 
 export default function ProjectsSection() {
   const projects = [
@@ -201,6 +203,32 @@ export default function ProjectsSection() {
       github: "https://github.com/edge405", // Replace with actual URLs
       // live: "https://thesis-system.com", // Replace with actual URLs
       image: k_fashion,
+    },
+    {
+      id: 10,
+      title: "Budget Ease",
+      description:
+        "A comprehensive personal finance management application designed to help you take control of your financial life. Track income, expenses, and savings with intuitive tools and real-time analytics.",
+      tech: ["Vite + React", "Tailwind", "Git", "Github"],
+      status: "Completed",
+      category: "web",
+      features: ["Budget Tracking", "Expense Categorization", "Savings Goals"],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      live: "https://budget-ease-rust.vercel.app/", // Replace with actual URLs
+      image: budget_ease,
+    },
+    {
+      id: 12,
+      title: "Water Wise",
+      description:
+        "WaterWise helps you maintain proper hydration by tracking your daily water intake and sending helpful reminders. Set your daily goal, log your water consumption, and receive notifications to stay on track with your hydration habits.",
+      tech: ["Angular", "Tailwind", "Git", "Github"],
+      status: "Completed",
+      category: "web",
+      features: ["Water Intake Tracking", "Daily Reminders", "Goal Setting"],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      live: "https://waterwise-gamma.vercel.app/", // Replace with actual URLs
+      image: water_wise,
     },
   ];
 
