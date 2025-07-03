@@ -11,6 +11,7 @@ import coding_challenge from "../assets/coding-challenge.png";
 import k_fashion from "../assets/k-fashion.png";
 import budget_ease from "../assets/budget-ease.png";
 import water_wise from "../assets/water-wise.png";
+import dsacademy from "../assets/dsacademy.gif";
 
 export default function ProjectsSection() {
   const projects = [
@@ -229,6 +230,19 @@ export default function ProjectsSection() {
       github: "https://github.com/edge405", // Replace with actual URLs
       live: "https://waterwise-gamma.vercel.app/", // Replace with actual URLs
       image: water_wise,
+    },
+    {
+      id: 13,
+      title: "DSAcademy",
+      description:
+        "DSAcademy is an online learning platform that offers a variety of courses in data science and related fields. It provides lessons, and quizzes to help learners enhance their skills.",
+      tech: ["HTML", "CSS", "JavaScript", "Git", "Github"],
+      status: "Completed",
+      category: "web",
+      features: ["Lessons", "Quizzes"],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      // live: "https://waterwise-gamma.vercel.app/", // Replace with actual URLs
+      image: dsacademy,
     },
   ];
 
