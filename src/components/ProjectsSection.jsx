@@ -261,7 +261,7 @@ export default function ProjectsSection() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-xl font-medium transition-all capitalize cursor-pointer ${
+                className={`px-5 py-2 rounded-xl font-medium transition-all capitalize cursor-pointer ${
                   selectedCategory === category
                     ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white"
                     : "text-gray-400 hover:text-white"
