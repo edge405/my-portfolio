@@ -2,13 +2,13 @@ import React from "react";
 import {
   Award,
   Code,
-  Coffee,
-  Zap,
+  Rocket,
   MapPin,
   Calendar,
   ArrowRight,
   Download,
   ChevronDown,
+  Briefcase,
 } from "lucide-react";
 import profileImage from "../assets/me.jpg";
 
@@ -16,8 +16,8 @@ export default function HeroSection({ scrollToSection }) {
   const stats = [
     { label: "Projects Completed", value: "10+", icon: Award },
     { label: "Technologies Mastered", value: "10+", icon: Code },
-    { label: "Coffee Consumed", value: "500+", icon: Coffee },
-    { label: "Lines of Code", value: "20K+", icon: Zap },
+    { label: "Hackathons Joined", value: "3+", icon: Rocket },
+    { label: "Clients Project Built", value: "4+", icon: Briefcase },
   ];
 
   const handleDownloadResume = () => {
