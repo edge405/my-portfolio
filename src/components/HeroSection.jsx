@@ -17,7 +17,7 @@ export default function HeroSection({ scrollToSection }) {
     { label: "Projects Completed", value: "10+", icon: Award },
     { label: "Technologies Mastered", value: "10+", icon: Code },
     { label: "Hackathons Joined", value: "3+", icon: Rocket },
-    { label: "Clients Project Built", value: "4+", icon: Briefcase },
+    { label: "Clients Project Built", value: "6+", icon: Briefcase },
   ];
 
   const handleDownloadResume = () => {
