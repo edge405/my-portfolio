@@ -173,20 +173,16 @@ export default function ProjectsSection() {
     },
     {
       id: 8,
-      title: "Cracking a Coding Challenge",
+      title: "DSAcademy",
       description:
-        "A personal project website blog where I tackled a coding challenge to improve my problem-solving skills.",
-      tech: ["PHP", "HTML", "CSS", "MySQL", "Git", "Github"],
+        "DSAcademy is an online learning platform that offers a variety of courses in data structures and algorithms. It provides lessons, and quizzes to help learners enhance their skills.",
+      tech: ["HTML", "CSS", "JavaScript", "Git", "Github"],
       status: "Completed",
       category: "web",
-      features: [
-        "Manage Blog Post",
-        "Interactive Comments Section",
-        "Like System",
-      ],
-      github: "https://github.com/edge405",
-      live: "https://ejlindayao.ct.ws/",
-      image: coding_challenge,
+      features: ["Lessons", "Quizzes"],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      // live: "https://waterwise-gamma.vercel.app/", // Replace with actual URLs
+      image: dsacademy,
     },
     {
       id: 9,
@@ -219,6 +215,23 @@ export default function ProjectsSection() {
       image: budget_ease,
     },
     {
+      id: 11,
+      title: "Cracking a Coding Challenge",
+      description:
+        "A personal project website blog where I tackled a coding challenge to improve my problem-solving skills.",
+      tech: ["PHP", "HTML", "CSS", "MySQL", "Git", "Github"],
+      status: "Completed",
+      category: "web",
+      features: [
+        "Manage Blog Post",
+        "Interactive Comments Section",
+        "Like System",
+      ],
+      github: "https://github.com/edge405",
+      live: "https://ejlindayao.ct.ws/",
+      image: coding_challenge,
+    },
+    {
       id: 12,
       title: "Water Wise",
       description:
@@ -230,19 +243,6 @@ export default function ProjectsSection() {
       github: "https://github.com/edge405", // Replace with actual URLs
       live: "https://waterwise-gamma.vercel.app/", // Replace with actual URLs
       image: water_wise,
-    },
-    {
-      id: 13,
-      title: "DSAcademy",
-      description:
-        "DSAcademy is an online learning platform that offers a variety of courses in data science and related fields. It provides lessons, and quizzes to help learners enhance their skills.",
-      tech: ["HTML", "CSS", "JavaScript", "Git", "Github"],
-      status: "Completed",
-      category: "web",
-      features: ["Lessons", "Quizzes"],
-      github: "https://github.com/edge405", // Replace with actual URLs
-      // live: "https://waterwise-gamma.vercel.app/", // Replace with actual URLs
-      image: dsacademy,
     },
   ];
 
