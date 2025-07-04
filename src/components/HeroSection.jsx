@@ -14,28 +14,14 @@ import profileImage from "../assets/me.jpg";
 
 export default function HeroSection({ scrollToSection }) {
   const stats = [
-    { label: "Projects Completed", value: "10+", icon: Award },
+    { label: "Projects Completed", value: "12+", icon: Award },
     { label: "Technologies Mastered", value: "10+", icon: Code },
     { label: "Hackathons Joined", value: "3+", icon: Rocket },
     { label: "Clients Project Built", value: "6+", icon: Briefcase },
   ];
 
   const handleDownloadResume = () => {
-    // Path to your resume file in the public folder
-
-    const resumeUrl = "/EDJAY-RESUME.pdf";
-
-    // Create an anchor element
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-
-    // This suggests the filename for the download
-    link.download = "EDJAY-RESUME.pdf"; // Change this to your preferred filename
-
-    // Append to the DOM, trigger click, then remove
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open("/EDJAY-RESUME.pdf", "_blank");
   };
 
   return (
