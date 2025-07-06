@@ -12,6 +12,7 @@ import k_fashion from "../assets/k-fashion.png";
 import budget_ease from "../assets/budget-ease.png";
 import water_wise from "../assets/water-wise.png";
 import dsacademy from "../assets/dsacademy.gif";
+import tea_amore from "../assets/tea-amore.png";
 
 export default function ProjectsSection() {
   const projects = [
@@ -244,10 +245,23 @@ export default function ProjectsSection() {
       live: "https://waterwise-gamma.vercel.app/", // Replace with actual URLs
       image: water_wise,
     },
+    {
+      id: 13,
+      title: "Tea Amore Milktea Shop",
+      description:
+        "Tea Amore is a desktop milktea shop that offers a variety of flavors and toppings to create your perfect drink.",
+      tech: ["Java", "Java Swing", "MySQL", "Git", "Github"],
+      status: "Completed",
+      category: "desktop",
+      features: ["Custom Drink Builder", "Order History", "Admin Management"],
+      github: "https://github.com/edge405", // Replace with actual URLs
+      // live: "https://tea-amore-milktea-shop.com", // Replace with actual URLs
+      image: tea_amore,
+    },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const categories = ["all", "web", "game"];
+  const categories = ["all", "web", "game", "desktop"];
   const filteredProjects =
     selectedCategory === "all"
       ? projects
@@ -257,6 +271,9 @@ export default function ProjectsSection() {
   const totalProjects = projects.length;
   const webProjects = projects.filter((p) => p.category === "web").length;
   const gameProjects = projects.filter((p) => p.category === "game").length;
+  const desktopProjects = projects.filter(
+    (p) => p.category === "desktop"
+  ).length;
 
   return (
     <section id="projects" className="relative py-20 px-4 z-10">
@@ -269,27 +286,36 @@ export default function ProjectsSection() {
         </p>
 
         {/* Category Filter */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-2 border border-white/10">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-5 py-2 rounded-xl font-medium transition-all capitalize cursor-pointer ${
-                  selectedCategory === category
-                    ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white"
-                    : "text-gray-400 hover:text-white"
-                }`}
-              >
-                {category} (
-                {category === "all"
-                  ? totalProjects
-                  : category === "web"
-                  ? webProjects
-                  : gameProjects}
-                )
-              </button>
-            ))}
+        <div className="flex justify-center mb-8 sm:mb-12">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-1 sm:p-2 border border-white/10 w-full max-w-md sm:max-w-none sm:w-auto">
+            <div className="flex flex-wrap justify-center gap-1 sm:gap-0">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-3 sm:px-5 py-2 rounded-xl font-medium transition-all capitalize cursor-pointer text-xs sm:text-sm flex-1 sm:flex-none ${
+                    selectedCategory === category
+                      ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white"
+                      : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  <span className="hidden sm:inline">
+                    {category} (
+                    {category === "all"
+                      ? totalProjects
+                      : category === "web"
+                      ? webProjects
+                      : category === "game"
+                      ? gameProjects
+                      : desktopProjects}
+                    )
+                  </span>
+                  <span className="sm:hidden">
+                    {category === "all" ? "All" : category}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
