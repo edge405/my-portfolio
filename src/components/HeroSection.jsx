@@ -14,7 +14,7 @@ import profileImage from "../assets/me.jpg";
 
 export default function HeroSection({ scrollToSection }) {
   const stats = [
-    { label: "Projects Completed", value: "12+", icon: Award },
+    { label: "Projects Completed", value: "13+", icon: Award },
     { label: "Technologies Mastered", value: "10+", icon: Code },
     { label: "Hackathons Joined", value: "3+", icon: Rocket },
     { label: "Clients Project Built", value: "6+", icon: Briefcase },
