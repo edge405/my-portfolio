@@ -20,7 +20,7 @@ export const BlogContainer = () => {
             The blog post you're looking for doesn't exist.
           </p>
           <button
-            onClick={() => navigate("/blogs")}
+            onClick={() => navigate("/")}
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -30,55 +30,29 @@ export const BlogContainer = () => {
       </div>
     );
   }
-
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: blogPost.title,
-        text: blogPost.excerpt,
-        url: window.location.href,
-      });
-    } else {
-      // Fallback: copy URL to clipboard
-      navigator.clipboard.writeText(window.location.href);
-      // You could add a toast notification here
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header Navigation */}
       <div className="container mx-auto px-4 py-6">
         <button
-          onClick={() => navigate("/blogs")}
-          className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-8"
+          onClick={() => navigate(-1)}
+          className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-8 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Blogs
+          Back
         </button>
       </div>
 
       {/* Blog Post Header */}
       <div className="container mx-auto px-4 pb-8">
         <div className="max-w-4xl mx-auto">
-          {/* Featured Image */}
-          {blogPost.image && (
-            <div className="mb-8 rounded-lg overflow-hidden">
-              <img
-                src={blogPost.image}
-                alt={blogPost.imageAlt || blogPost.title}
-                className="w-full h-64 md:h-80 object-cover"
-              />
-            </div>
-          )}
-
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {blogPost.title}
           </h1>
 
           {/* Meta Information */}
-          <div className="flex flex-wrap items-center gap-6 mb-8 text-gray-400">
+          <div className="flex flex-wrap items-center gap-6 mb-8 text-gray-400 text-[16px]">
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
               <time dateTime={blogPost.date}>
@@ -97,32 +71,33 @@ export const BlogContainer = () => {
 
             <div className="flex items-center">
               <Tag className="w-4 h-4 mr-2" />
-              <span className="px-3 py-1 bg-blue-600 text-blue-100 rounded-full text-sm">
+              <span className="px-3 py-1 bg-blue-600 text-blue-100 rounded-full text-[16px]">
                 {blogPost.category}
               </span>
             </div>
-
-            <button
-              onClick={handleShare}
-              className="flex items-center hover:text-white transition-colors"
-              title="Share this post"
-            >
-              <Share2 className="w-4 h-4 mr-2" />
-              Share
-            </button>
           </div>
-
           {/* Tags */}
           {blogPost.tags && blogPost.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-8 text-xl">
               {blogPost.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm hover:bg-gray-700 transition-colors"
+                  className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-[16px] hover:bg-gray-700 transition-colors"
                 >
-                  #{tag}
+                  {tag}
                 </span>
               ))}
+            </div>
+          )}
+
+          {/* Featured Image */}
+          {blogPost.image && (
+            <div className="w-full md:h-96 bg-gray-800 rounded-lg overflow-hidden mb-8">
+              <img
+                src={blogPost.image}
+                alt={blogPost.imageAlt || blogPost.title}
+                className="w-full h-full object-contain"
+              />
             </div>
           )}
 
@@ -143,27 +118,15 @@ export const BlogContainer = () => {
       </div>
 
       {/* Footer Actions */}
-      <div className="container mx-auto px-4 py-8 border-t border-gray-800">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={handleShare}
-              className="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
-            >
-              <Share2 className="w-4 h-4 mr-2" />
-              Share this post
-            </button>
-          </div>
-
-          <button
-            onClick={() => navigate("/blogs")}
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to All Blogs
-          </button>
-        </div>
-      </div>
+      {/* <div className="flex justify-center container mx-auto px-4 py-8 border-t border-gray-800">
+        <button
+          onClick={() => navigate("/blogs")}
+          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to All Blogs
+        </button>
+      </div> */}
     </div>
   );
 };

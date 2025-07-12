@@ -1,18 +1,16 @@
-// import grad_pic from "../assets/blogs/graduation-picture.jpg";
-// import { Blog1_DevOpsJourney } from "../components/blogs/Blogs";
+import grad_pic from "../assets/blogs/graduation-picture.jpg";
+import { Life_After_Graduation } from "../components/blogs/Life_After_Graduation";
 
 export const blogPosts = [
-  // {
-  //   id: 1,
-  //   title: "My Journey from Full-Stack Development to DevOps",
-  //   excerpt:
-  //     "Exploring the transition from traditional development roles to the exciting world of DevOps engineering and infrastructure automation.",
-  //   date: "2024-12-15",
-  //   fullContent: <Blog1_DevOpsJourney />,
-  //   readTime: "5 min",
-  //   category: "Reflection",
-  //   tags: ["Life", "Realization", "Learning"],
-  //   image: grad_pic,
-  //   imageAlt: "DevOps workflow visualization with code and infrastructure",
-  // },
+  {
+    id: 1,
+    title: "My Life after Graduation",
+    excerpt: "Sharing my thoughts and experiences on life after graduation",
+    date: "2025-07-11",
+    fullContent: <Life_After_Graduation />,
+    readTime: "5 min",
+    category: "Reflection",
+    tags: ["Life", "Realization", "Learning"],
+    image: grad_pic,
+  },
 ];
