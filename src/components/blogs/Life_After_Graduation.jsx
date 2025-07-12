@@ -15,9 +15,9 @@ export function Life_After_Graduation() {
     <div className="prose prose-invert prose-lg max-w-none">
       <p className="text-xl">
         June 11, 2025. This is the day where I graduated, I felt so accomplished
-        and ready for the corporate world! Since I have skills and I also have
-        won 3 consecutive coding competitions + hackathons, I expected that I
-        can land a job easily. But the reality is different and I want to share
+        and ready for the corporate world! Since I have skills and have also won
+        3 consecutive coding competitions + hackathons, I expected that I could
+        land a job easily. But the reality was different, and I want to share
         with you my 30th day after graduation.
       </p>
 
@@ -27,8 +27,8 @@ export function Life_After_Graduation() {
       <p className="text-xl">
         On the first week after graduation. The excitement really kicked in. I
         kept thinking about what kind of job or company would accept me in tech.
-        I'm very confident about web developer role since I have a hands on
-        experience building robust web applications. That week, I've created a
+        I was very confident about web developer role since I have a hands on
+        experience creating robust web applications. That week, I've created a
         website portfolio then my resume. I've also created a LinkedIn, Indeed,
         and Jobstreet profile. I felt ready and hyped I told myself, “Let’s spam
         these applications!”😄
@@ -40,14 +40,13 @@ export function Life_After_Graduation() {
         the messages often included the word "Unfortunately". I kept wondering
         wasn’t winning coding competition, hackathons, and building projects
         supposed to give me a headstart? It felt like all my efforts weren’t
-        enough. I started doubting myself and my skills. I felt lost, sad, and
-        frustrated. At one point, it even felt like spending four years learning
-        computer science was a waste of time. All the excitements I had before
-        were gone. I was just sitting in my room, staring at my computer screen,
-        feeling empty and unmotivated. Asking myself, "What now? What should I
-        do next? Should I pursue a career in tech?" This questions goes into my
-        head everynight. I cried and felt stuck, unsure of everything I once
-        believed in.
+        enough. I started doubting myself and my skills. At one point, it even
+        felt like spending four years learning computer science was a waste of
+        time. All the excitements I had before were gone. I was just sitting in
+        my room, staring at my computer screen, feeling empty and unmotivated.
+        Asking myself, "What now? What should I do next? Should I pursue a
+        career in tech?" This questions goes into my head everynight. I cried
+        and felt stuck, unsure of everything I once believed in.
       </p>
       <hr className="my-6 text-gray-600" />
       <p className="text-xl">
