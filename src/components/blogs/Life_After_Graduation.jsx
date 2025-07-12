@@ -40,13 +40,14 @@ export function Life_After_Graduation() {
         the messages often included the word "Unfortunately". I kept wondering
         wasn’t winning coding competition, hackathons, and building projects
         supposed to give me a headstart? It felt like all my efforts weren’t
-        enough. I started doubting myself and my skills. I felt lost,
-        frustrated, and sad. At one point, it even felt like spending four years
-        learning computer science was a waste of time. All the excitements I had
-        before were gone. I was just sitting in my room, staring at my computer
-        screen, feeling empty and unmotivated. Asking myself, "What now? What
-        should I do next? Should I pursue a career in tech?" This questions goes
-        into my head everynight. I was so confused, lost, and cried a lot.
+        enough. I started doubting myself and my skills. I felt lost, sad, and
+        frustrated. At one point, it even felt like spending four years learning
+        computer science was a waste of time. All the excitements I had before
+        were gone. I was just sitting in my room, staring at my computer screen,
+        feeling empty and unmotivated. Asking myself, "What now? What should I
+        do next? Should I pursue a career in tech?" This questions goes into my
+        head everynight. I cried and felt stuck, unsure of everything I once
+        believed in.
       </p>
       <hr className="my-6 text-gray-600" />
       <p className="text-xl">
