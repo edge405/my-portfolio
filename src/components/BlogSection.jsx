@@ -32,7 +32,7 @@ export default function BlogSection() {
               {blogPosts.map((post) => (
                 <article
                   key={post.id}
-                  className="bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 group hover:bg-white/10 transition-all flex-shrink-0 w-96"
+                  className="bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 group hover:bg-white/10 transition-all flex-shrink-0 w-85"
                 >
                   {/* Image Section */}
                   <div className="relative overflow-hidden">

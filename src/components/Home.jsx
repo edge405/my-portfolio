@@ -28,6 +28,7 @@ import {
   Terminal,
   Heart,
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
@@ -139,6 +140,49 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <Helmet>
+        <title>Edjay Lindayao | Full Stack Developer Portfolio</title>
+        <meta
+          name="description"
+          content="Hi, I'm Edjay Lindayao, a full stack developer specializing in React, Vite, and modern web technologies. Check out my projects and contact me."
+        />
+        <meta
+          name="keywords"
+          content="Edjay Lindayao, Full Stack Developer, React Developer, Vite, Web Developer, Portfolio"
+        />
+        <meta name="author" content="Edjay Lindayao" />
+        {/* Open Graph for social sharing */}
+        <meta
+          property="og:title"
+          content="Edjay Lindayao | Full Stack Developer Portfolio"
+        />
+        <meta
+          property="og:description"
+          content="Explore my projects, skills, and experience in full stack development."
+        />
+        <meta property="og:url" content="https://www.edjay.life" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://www.edjay.life/preview.jpg"
+        />{" "}
+        {/* Make sure this image exists */}
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Edjay Lindayao | Full Stack Developer Portfolio"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore my projects, skills, and experience in full stack development."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.edjay.life/preview.jpg"
+        />
+      </Helmet>
+
       {/* Background Elements */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-blue-900/20"></div>
