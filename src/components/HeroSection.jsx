@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   Award,
   Code,
@@ -13,12 +13,55 @@ import {
 import profileImage from "../assets/me.jpg";
 
 export default function HeroSection({ scrollToSection }) {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  const titles = useMemo(
+    () => [
+      "Full-Stack Developer",
+      "Web Developer",
+      "Backend Developer",
+      "Software Developer",
+      "Aspiring DevOps Engineer",
+    ],
+    []
+  );
+
   const stats = [
     { label: "Projects Completed", value: "13+", icon: Award },
     { label: "Technologies Mastered", value: "10+", icon: Code },
     { label: "Hackathons Joined", value: "3+", icon: Rocket },
     { label: "Clients Project Built", value: "6+", icon: Briefcase },
   ];
+
+  useEffect(() => {
+    const currentTitle = titles[currentTitleIndex];
+    let timeoutId;
+
+    if (isTyping) {
+      if (displayedText.length < currentTitle.length) {
+        timeoutId = setTimeout(() => {
+          setDisplayedText(currentTitle.slice(0, displayedText.length + 1));
+        }, 100);
+      } else {
+        timeoutId = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+      }
+    } else {
+      if (displayedText.length > 0) {
+        timeoutId = setTimeout(() => {
+          setDisplayedText(displayedText.slice(0, -1));
+        }, 50);
+      } else {
+        setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+        setIsTyping(true);
+      }
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [displayedText, isTyping, currentTitleIndex, titles]);
 
   const handleDownloadResume = () => {
     window.open("/EDJAY-RESUME.pdf", "_blank");
@@ -47,11 +90,13 @@ export default function HeroSection({ scrollToSection }) {
             Edjay Lindayao
           </span>
         </h1>
-        <div className="text-2xl md:text-3xl mb-6">
-          <span className="text-gray-300">Full-Stack Developer</span>
-          <span className="text-purple-400 mx-2">•</span>
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Aspiring DevOps Engineer
+        <div className="text-2xl md:text-3xl mb-6 h-12 flex items-center justify-center">
+          <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold relative">
+            {displayedText}
+            <span
+              className="inline-block w-0.5 bg-purple-400 animate-blink"
+              style={{ height: "0.9em" }}
+            ></span>
           </span>
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center text-gray-400 mb-12 space-y-4 sm:space-y-0 sm:space-x-8 text-base sm:text-lg">

@@ -9,7 +9,6 @@ import {
   User,
 } from "lucide-react";
 
-// Sample blog content components
 export function Life_After_Graduation() {
   return (
     <div className="prose prose-invert prose-lg max-w-none">

@@ -264,6 +264,20 @@ export default function Home() {
         ::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(to bottom, #7c3aed, #2563eb);
         }
+        @keyframes blink {
+          0%,
+          50% {
+            opacity: 1;
+          }
+          51%,
+          100% {
+            opacity: 0;
+          }
+        }
+
+        .animate-blink {
+          animation: blink 1s infinite;
+        }
       `}</style>
     </div>
   );
