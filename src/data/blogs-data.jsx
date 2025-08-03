@@ -19,7 +19,7 @@ export const blogPosts = [
     id: 2,
     title: "Message to My Past Self",
     excerpt: "A message I wish I could send to my past self",
-    date: "2025-07-24",
+    date: "2025-08-03",
     fullContent: <PastSelf_Message />,
     readTime: "2 min",
     category: "Reflection",
