@@ -66,10 +66,10 @@ export default function AboutSection() {
                     Based in Iloilo City, Philippines
                   </span>
                 </div> */}
-              {/* <div className="flex items-center">
+              <div className="flex items-center">
                 <Cat className="text-pink-400 mr-3" size={20} />
                 <span className="text-gray-300">Cat lover</span>
-              </div> */}
+              </div>
               <div className="flex items-center">
                 <Coffee className="text-yellow-400 mr-3" size={20} />
                 <span className="text-gray-300">
@@ -83,12 +83,12 @@ export default function AboutSection() {
                 </span>
               </div>
 
-              {/* <div className="flex items-center">
+              <div className="flex items-center">
                 <Zap className="text-red-400 mr-3" size={20} />
                 <span className="text-gray-300">
-                  Active participant in hackathon events
+                  Hackathon participant and coding enthusiast
                 </span>
-              </div> */}
+              </div>
 
               <div className="flex items-center">
                 <Code className="text-blue-400 mr-3" size={20} />
