@@ -1,135 +1,92 @@
 import { useState } from "react";
+import { portfolio } from "../data/portfolio-data";
+import { ChevronDown, Building2, Calendar, Award } from "lucide-react";
 
 export default function ExperienceSection() {
-  const experiences = [
-    {
-      role: "Solo Backend Developer",
-      company: "OJT",
-      period: "2025 (4 months)",
-      type: "Internship",
-      description:
-        "Iloilo Province Employment Portal and Services (IPEPS) is a job-finding platform I worked on during my internship. Developed for the Public Employment Service Office (PESO), the system supports four user types: students, jobseekers, academe, and admin. Each user type has specific features tailored to their needs, making the platform efficient for connecting individuals to employment opportunities across Iloilo Province.",
-      achievements: [
-        "Structured the backend architecture",
-        "Designed and optimized PostgreSQL database schemas",
-        "Created over 30 APIs for this project",
-      ],
-      tech: ["Python Flask", "React", "PostgreSQL", "Postman", "Git", "Github"],
-    },
-    {
-      role: "Solo Full-Stack Developer",
-      company: "Our Thesis Project",
-      period: "2024 - 2025",
-      type: "Thesis",
-      description:
-        "iLocate is a web-based boarding house finder for Iloilo City. It helps users find nearby boarding houses that match their preferences using the Haversine algorithm to calculate distances accurately. The platform connects tenants with verified landlords, improving search convenience and property visibility.",
-      achievements: [
-        "Implemented the Haversine algorithm for efficient geolocation-based search",
-        "Built a responsive frontend using modern web technologies for seamless user experience",
-        "Integrated backend with geospatial logic to handle distance calculations and filtering",
-        "Structured database design to manage users, boarding houses, and location data effectively",
-        "Added role-based access (user, owner, admin) for secure and organized feature access",
-        "Enabled document upload system for permit verification by admins",
-        "Implemented user authentication system for secure login and access control",
-      ],
-      tech: ["React", "Express", "MySQL", "Git", "Github", "Postman"],
-    },
-    {
-      role: "Full-Stack Developer",
-      company: "Thesis System of Computer Programming (COE)",
-      period: "2024 - 2025",
-      type: "Thesis",
-      description:
-        "A web-based Pension Tracking System that enables seniors in Alimodian to monitor their pension payments and history. Admins oversee pensioner records, schedule payouts, and send notifications to ensure timely and transparent pension management.",
-      achievements: [
-        "Developed a robust backend with Python Flask and PostgreSQL",
-        "Ensured secure and centralized pension data management",
-        "Created a responsive frontend using React for seamless user experience",
-        "Integrated automated notification system to inform pensioners of scheduled payouts",
-        "Optimized database design for efficient tracking of pension records and transactions",
-      ],
-      tech: [
-        "Python Flask",
-        "PostgreSQL",
-        "React",
-        "Tailwind",
-        "Git",
-        "Github",
-        "Postman",
-      ],
-    },
-    {
-      role: "Programmer",
-      company: "Odyssey Festival",
-      period: "28 days",
-      type: "Hackathon",
-      description:
-        "Sekyu is an exciting, fast-paced local PvP desktop game inspired by the traditional Filipino Capture the Flag. Developed during a hackathon, it offers thrilling one-on-one gameplay where each player skillfully controls three characters on a single PC, promising engaging and competitive matches that keep players on the edge of their seats.",
-      achievements: [
-        "Implemented the game logic and mechanics",
-        "Integrated the design and animations for a smooth gaming experience",
-      ],
-      tech: ["Unity", "C#", "Git", "Github"],
-    },
-  ];
-
+  const { experiences } = portfolio;
   const [showAll, setShowAll] = useState(false);
-  const INITIAL_ITEMS = 1; // Show first 3 items initially
+  const INITIAL_ITEMS = 2;
 
   const displayedExperiences = showAll
     ? experiences
     : experiences.slice(0, INITIAL_ITEMS);
   const hasMoreItems = experiences.length > INITIAL_ITEMS;
 
+  const getTypeColor = (type) => {
+    const colors = {
+      Internship: "bg-emerald-500/20 text-emerald-300 border-emerald-400/30",
+      Thesis: "bg-blue-500/20 text-blue-300 border-blue-400/30",
+      Hackathon: "bg-orange-500/20 text-orange-300 border-orange-400/30",
+      Job: "bg-purple-500/20 text-purple-300 border-purple-400/30",
+    };
+    return colors[type] || "bg-purple-500/20 text-purple-300 border-purple-400/30";
+  };
+
   return (
-    <section id="experience" className="relative py-20 px-4 z-10">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-purple-400">
-          Experience
-        </h2>
-        <div className="space-y-8">
+    <section id="experience" className="relative py-24 px-4 z-10">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-violet-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+            Experience
+          </h2>
+          <p className="text-gray-400 max-w-xl mx-auto">
+            My professional journey and key projects
+          </p>
+        </div>
+        
+        <div className="space-y-6">
           {displayedExperiences.map((exp, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10"
+              className="group relative bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl rounded-3xl p-8 border border-white/8 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
             >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
                     {exp.role}
                   </h3>
-                  <p className="text-purple-400 text-lg font-medium">
-                    {exp.company}
-                  </p>
+                  <div className="flex items-center gap-2 text-purple-400">
+                    <Building2 size={18} />
+                    <span className="font-medium">{exp.company}</span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-4 mt-4 md:mt-0">
-                  <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className={`px-4 py-1.5 rounded-full text-sm font-medium border ${getTypeColor(exp.type)}`}>
                     {exp.type}
                   </span>
-                  <span className="text-gray-400">{exp.period}</span>
+                  <div className="flex items-center gap-1.5 text-gray-500">
+                    <Calendar size={16} />
+                    <span className="text-sm">{exp.period}</span>
+                  </div>
                 </div>
               </div>
-              <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+              
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 {exp.description}
               </p>
+              
               <div className="mb-6">
-                <h4 className="text-white font-semibold mb-3">
-                  Key Achievements:
+                <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                  <Award size={18} className="text-purple-400" />
+                  Key Achievements
                 </h4>
-                <ul className="space-y-2">
+                <ul className="grid md:grid-cols-2 gap-2">
                   {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="text-gray-300 flex items-start">
-                      <span className="text-purple-400 mr-3 mt-1">•</span>
+                    <li key={i} className="text-gray-400 flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">●</span>
                       {achievement}
                     </li>
                   ))}
                 </ul>
               </div>
+              
               <div className="flex flex-wrap gap-2">
                 {exp.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm"
+                    className="bg-white/5 text-gray-300 px-3 py-1.5 rounded-lg text-sm border border-white/10 hover:border-purple-400/30 hover:text-purple-300 transition-all"
                   >
                     {tech}
                   </span>
@@ -137,40 +94,23 @@ export default function ExperienceSection() {
               </div>
             </div>
           ))}
-
-          {/* See More/See Less Button */}
-          {hasMoreItems && (
-            <div className="flex justify-center">
-              <button
-                onClick={() => setShowAll(!showAll)}
-                className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
-              >
-                <span className="flex items-center space-x-2">
-                  <span>
-                    {showAll
-                      ? "See Less"
-                      : `See More (${experiences.length - INITIAL_ITEMS} more)`}
-                  </span>
-                  <svg
-                    className={`w-5 h-5 transition-transform duration-300 ${
-                      showAll ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-          )}
         </div>
+
+        {hasMoreItems && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+            >
+              <span>
+                {showAll ? "Show Less" : `View All ${experiences.length} Experiences`}
+              </span>
+              <ChevronDown 
+                className={`w-4 h-4 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} 
+              />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

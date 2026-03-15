@@ -1,99 +1,78 @@
-import { Calendar, Clock, Star, Tag, ArrowRight } from "lucide-react";
+import { Calendar, Clock, Tag, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { blogPosts } from "../data/blogs-data";
-import { BlogContainer } from "./blogs/BlogContainer";
 
 export default function BlogSection() {
   const navigate = useNavigate();
 
-  function handleClick(postId) {
-    console.log(`Navigating to blog post with ID: ${postId}`);
-
+  const handleClick = (postId) => {
     navigate(`/blog/${postId}`);
-  }
-  return (
-    <section id="blog" className="relative py-20 px-4 z-10">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-purple-400">
-          Latest Blog Posts
-        </h2>
-        <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-          Sharing my journey, learnings, and life experiences
-        </p>
+  };
 
-        {/* Horizontal Scrollable Container */}
+  return (
+    <section id="blog" className="relative py-24 px-4 z-10">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-violet-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+            Latest Blog Posts
+          </h2>
+          <p className="text-gray-400 max-w-xl mx-auto">
+            Sharing my journey, learnings, and life experiences
+          </p>
+        </div>
+
         {blogPosts.length === 0 ? (
-          <div className="text-center text-gray-400">
+          <div className="text-center text-gray-500 py-12">
             No blog posts available
           </div>
         ) : (
-          <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-500/50 scrollbar-track-transparent hover:scrollbar-thumb-purple-500/70 pb-4">
+          <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-500/50 scrollbar-track-transparent pb-4 -mx-4 px-4">
             <div className="flex gap-6 w-max">
               {blogPosts.map((post) => (
                 <article
                   key={post.id}
-                  className="bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 group hover:bg-white/10 transition-all flex-shrink-0 w-85"
+                  className="group bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl rounded-3xl overflow-hidden border border-white/8 hover:border-white/20 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 flex-shrink-0 w-80"
                 >
-                  {/* Image Section */}
                   <div className="relative overflow-hidden">
                     <img
                       src={post.image}
                       alt={post.imageAlt}
-                      className="w-full h-48 object-contain bg-gray-100 group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-44 object-contain bg-gray-900/50 group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-4 left-4">
-                      <span className="bg-purple-500/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-purple-500/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
                         {post.category}
                       </span>
                     </div>
                   </div>
-                  {/* Content Section */}
+                  
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors line-clamp-2">
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed text-sm line-clamp-3">
+                    <p className="text-gray-400 mb-4 text-sm line-clamp-2">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between text-xs text-gray-400 mb-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="flex items-center">
-                          <Calendar size={14} className="mr-1" />
-                          {post.date}
-                        </div>
-                        <div className="flex items-center">
-                          <Clock size={14} className="mr-1" />
-                          {post.readTime}
-                        </div>
+                    <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
+                      <div className="flex items-center gap-1">
+                        <Calendar size={12} />
+                        {post.date}
                       </div>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1 mb-4">
-                      {post.tags.slice(0, 3).map((tag, i) => (
-                        <span
-                          key={i}
-                          className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-md text-xs flex items-center"
-                        >
-                          <Tag size={10} className="mr-1" />
-                          {tag}
-                        </span>
-                      ))}
-                      {post.tags.length > 3 && (
-                        <span className="text-gray-400 text-xs px-2 py-1">
-                          +{post.tags.length - 3} more
-                        </span>
-                      )}
+                      <div className="flex items-center gap-1">
+                        <Clock size={12} />
+                        {post.readTime}
+                      </div>
                     </div>
 
                     <button
                       onClick={() => handleClick(post.id)}
-                      className="text-purple-400 hover:text-purple-300 transition-colors font-medium flex items-center cursor-pointer text-sm"
+                      className="text-purple-400 hover:text-purple-300 transition-colors font-medium flex items-center gap-1 text-sm group/btn"
                     >
                       Read More
-                      <ArrowRight size={14} className="ml-1" />
+                      <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </article>
