@@ -34,7 +34,7 @@ export const portfolio = {
   },
 
   stats: [
-    { label: "Projects Completed", value: "13+", icon: FaBriefcase },
+    { label: "Projects Completed", value: "15+", icon: FaBriefcase },
     { label: "Technologies Mastered", value: "10+", icon: FaCode },
     { label: "Hackathons Joined", value: "3+", icon: FaBolt },
     { label: "Clients Project Built", value: "6+", icon: FaAward },

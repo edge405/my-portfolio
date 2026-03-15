@@ -11,6 +11,8 @@ import budget_ease from "../assets/projects/budget-ease.png";
 import water_wise from "../assets/projects/water-wise.png";
 import dsacademy from "../assets/projects/dsacademy.gif";
 import tea_amore from "../assets/projects/tea-amore.png";
+import proventous from "../assets/projects/proventous.png";
+import altamedia_portal from "../assets/projects/altamedia_portal.png";
 
 export const projects = [
   {
@@ -246,5 +248,47 @@ export const projects = [
     github: "https://github.com/edge405", // Replace with actual URLs
     // live: "https://tea-amore-milktea-shop.com", // Replace with actual URLs
     image: tea_amore,
+  },
+  {
+    id: 14,
+    title: "Proventous",
+    description:
+      "Proventous is a modern HRIS platform designed to streamline and automate human resource processes, from hiring to employee management and analytics.",
+    tech: ["React", "Tailwind", "Laravel", "MySQL", "Git", "Github"],
+    status: "On Going",
+    category: "web",
+    features: [
+      "Employee data management",
+      "Recruitment and applicant tracking",
+      "Onboarding automation",
+      "Payroll and compensation",
+      "Time, attendance, and leave management",
+      "Performance management",
+      "Benefits administration",
+      "Training and development",
+      "Reporting and workforce analytics",
+    ],
+    github: "https://github.com/edge405", // Replace with actual URLs
+    // live: "https://tea-amore-milktea-shop.com", // Replace with actual URLs
+    image: proventous,
+  },
+  {
+    id: 15,
+    title: "AltaMedia Portal",
+    description:
+      "AltaMedia Portal is a web-based portal for AltaMedia, a company that offers a variety of services to its clients.",
+    tech: ["React", "Tailwind", "Express", "MySQL", "Git", "Github"],
+    status: "Completed",
+    category: "web",
+    features: [
+      "User Authentication",
+      "AI Suggestion",
+      "Document Upload System",
+      "Admin Verification",
+      "Content Calendar"
+    ],
+    github: "https://github.com/edge405", // Replace with actual URLs
+    // live: "https://tea-amore-milktea-shop.com", // Replace with actual URLs
+    image: altamedia_portal,
   },
 ];
