@@ -13,6 +13,7 @@ import dsacademy from "../assets/projects/dsacademy.gif";
 import tea_amore from "../assets/projects/tea-amore.png";
 import proventous from "../assets/projects/proventous.png";
 import altamedia_portal from "../assets/projects/altamedia_portal.png";
+import hndvr from "../assets/projects/hndvr.png";
 
 export const projects = [
   {
@@ -35,6 +36,70 @@ export const projects = [
   },
   {
     id: 2,
+    title: "Proventous",
+    description:
+      "Proventous is a modern HRIS platform designed to streamline and automate human resource processes, from hiring to employee management and analytics.",
+    tech: ["React", "Tailwind", "Laravel", "MySQL", "Git", "Github"],
+    status: "On Going",
+    category: "web",
+    features: [
+      "Employee data management",
+      "Recruitment and applicant tracking",
+      "Onboarding automation",
+      "Payroll and compensation",
+      "Time, attendance, and leave management",
+      "Performance management",
+      "Benefits administration",
+      "Training and development",
+      "Reporting and workforce analytics",
+    ],
+    github: "https://github.com/edge405",
+    live: "https://proventous.com/",
+    image: proventous,
+  },
+  {
+    id: 3,
+    title: "AltaMedia Portal",
+    description:
+      "AltaMedia Portal is a web-based portal for AltaMedia, a company that offers a variety of services to its clients.",
+    tech: ["React", "Tailwind", "Express", "MySQL", "Git", "Github"],
+    status: "Completed",
+    category: "web",
+    features: [
+      "User Authentication",
+      "AI Suggestion",
+      "Document Upload System",
+      "Admin Verification",
+      "Content Calendar",
+    ],
+    github: "https://github.com/edge405",
+    live: "https://altamedia.ai/",
+    image: altamedia_portal,
+  },
+  {
+    id: 4,
+    title: "HNDVR",
+    description:
+      "HNDVR is a digital asset and inventory management app that tracks who has what in workplaces, schools, and organizations. It records every movement of shared, borrowed, or assigned items—such as laptops, tools, keys, furniture, and uniforms—creating a clear and permanent history of ownership and transfers.",
+    tech: ["Laravel", "React", "Tailwind", "MySQL", "Git", "Github"],
+    status: "On Going",
+    category: "web",
+    features: [
+      "Track Items",
+      "Transfer / Handover",
+      "Return Items",
+      "Split Quantities",
+      "Full History",
+      "Approvals",
+      "Organizations / Teams",
+      "PWA",
+    ],
+    github: "https://github.com/edge405",
+    live: "https://hndvr.net/",
+    image: hndvr,
+  },
+  {
+    id: 5,
     title: "iLocate",
     description:
       "iLocate is a web app that finds nearby boarding houses in Iloilo City using the Haversine algorithm.",
@@ -57,7 +122,7 @@ export const projects = [
     image: ilocate,
   },
   {
-    id: 3,
+    id: 6,
     title: "IPEPS",
     description:
       "A job portal for PESO Iloilo City that offers job postings, training programs, scholarship listings, and an administrative analytics dashboard for efficient management and insights.",
@@ -87,7 +152,7 @@ export const projects = [
     image: ipeps,
   },
   {
-    id: 4,
+    id: 7,
     title: "Senior Citizen Pension Tracking System",
     description:
       "A web system for Pianda-an Sur, Alimodian that manages senior records and tracks pension payouts for transparency and efficiency.",
@@ -113,7 +178,7 @@ export const projects = [
     image: pts,
   },
   {
-    id: 5,
+    id: 8,
     title: "SAGAP.ai",
     description:
       "An AI-powered web app that uses NLP to match projects with suitable consultants by analyzing expertise and requirements, streamlining the selection process. This was our project for a 24-hour Western Visayas AI hackathon, where we won 2nd place.",
@@ -130,7 +195,7 @@ export const projects = [
     image: sagapai,
   },
   {
-    id: 6,
+    id: 9,
     title: "Konekta",
     description:
       "KONEK TA is a Hiligaynon word meaning 'Let's Connect.' It is a social media platform designed to bring users together based on shared interests. Unlike traditional social networks that emphasize broad connections, KONEK TA focuses on interest-based networking, enabling users to discover like-minded individuals, exchange ideas, and engage in meaningful discussions.",
@@ -147,7 +212,7 @@ export const projects = [
     image: konekta,
   },
   {
-    id: 7,
+    id: 10,
     title: "Running Blog",
     description:
       "A blogging platform for my classmate to share his running journey. It features user authentication, a like and comment system, and two user roles: regular users (can like and comment) and admins (can create and manage blog posts).",
@@ -164,7 +229,7 @@ export const projects = [
     image: running_blog,
   },
   {
-    id: 8,
+    id: 11,
     title: "DSAcademy",
     description:
       "DSAcademy is an online learning platform that offers a variety of courses in data structures and algorithms. It provides lessons, and quizzes to help learners enhance their skills.",
@@ -177,7 +242,7 @@ export const projects = [
     image: dsacademy,
   },
   {
-    id: 9,
+    id: 12,
     title: "K-Fashion",
     description:
       "A blogging platform for fashion enthusiasts to share their style journeys.",
@@ -194,7 +259,7 @@ export const projects = [
     image: k_fashion,
   },
   {
-    id: 10,
+    id: 13,
     title: "Budget Ease",
     description:
       "A comprehensive personal finance management application designed to help you take control of your financial life. Track income, expenses, and savings with intuitive tools and real-time analytics.",
@@ -207,7 +272,7 @@ export const projects = [
     image: budget_ease,
   },
   {
-    id: 11,
+    id: 14,
     title: "Cracking a Coding Challenge",
     description:
       "A personal project website blog where I tackled a coding challenge to improve my problem-solving skills.",
@@ -224,7 +289,7 @@ export const projects = [
     image: coding_challenge,
   },
   {
-    id: 12,
+    id: 15,
     title: "Water Wise",
     description:
       "WaterWise helps you maintain proper hydration by tracking your daily water intake and sending helpful reminders. Set your daily goal, log your water consumption, and receive notifications to stay on track with your hydration habits.",
@@ -237,7 +302,7 @@ export const projects = [
     image: water_wise,
   },
   {
-    id: 13,
+    id: 16,
     title: "Tea Amore Milktea Shop",
     description:
       "Tea Amore is a desktop milktea shop that offers a variety of flavors and toppings to create your perfect drink.",
@@ -248,47 +313,5 @@ export const projects = [
     github: "https://github.com/edge405", // Replace with actual URLs
     // live: "https://tea-amore-milktea-shop.com", // Replace with actual URLs
     image: tea_amore,
-  },
-  {
-    id: 14,
-    title: "Proventous",
-    description:
-      "Proventous is a modern HRIS platform designed to streamline and automate human resource processes, from hiring to employee management and analytics.",
-    tech: ["React", "Tailwind", "Laravel", "MySQL", "Git", "Github"],
-    status: "On Going",
-    category: "web",
-    features: [
-      "Employee data management",
-      "Recruitment and applicant tracking",
-      "Onboarding automation",
-      "Payroll and compensation",
-      "Time, attendance, and leave management",
-      "Performance management",
-      "Benefits administration",
-      "Training and development",
-      "Reporting and workforce analytics",
-    ],
-    github: "https://github.com/edge405", // Replace with actual URLs
-    // live: "https://tea-amore-milktea-shop.com", // Replace with actual URLs
-    image: proventous,
-  },
-  {
-    id: 15,
-    title: "AltaMedia Portal",
-    description:
-      "AltaMedia Portal is a web-based portal for AltaMedia, a company that offers a variety of services to its clients.",
-    tech: ["React", "Tailwind", "Express", "MySQL", "Git", "Github"],
-    status: "Completed",
-    category: "web",
-    features: [
-      "User Authentication",
-      "AI Suggestion",
-      "Document Upload System",
-      "Admin Verification",
-      "Content Calendar"
-    ],
-    github: "https://github.com/edge405", // Replace with actual URLs
-    // live: "https://tea-amore-milktea-shop.com", // Replace with actual URLs
-    image: altamedia_portal,
   },
 ];

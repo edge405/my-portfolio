@@ -40,7 +40,10 @@ export default function HeroSection({ scrollToSection }) {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-4 z-10 overflow-hidden pt-24">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center px-4 z-10 overflow-hidden pt-24"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/30 via-black to-black" />
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djJoLTJ2LTJoMnptLTQgNHYyaC0ydi0yaDJ6bTgtOGgydjJoLTJ2LTJ6bS00IDhoLTJ2LTJoMnptLTQgOGgydjJoLTJ2LTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-40" />
 
@@ -50,7 +53,11 @@ export default function HeroSection({ scrollToSection }) {
             <div className="absolute inset-0 bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500 rounded-full animate-spin-slow opacity-75 blur-xl" />
             <div className="absolute inset-1 bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500 rounded-full animate-spin-slow" />
             <div className="absolute inset-3 bg-black rounded-full flex items-center justify-center overflow-hidden">
-              <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+              <img
+                src={profileImage}
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -64,7 +71,10 @@ export default function HeroSection({ scrollToSection }) {
         <div className="text-2xl md:text-3xl mb-6 h-10 flex items-center justify-center">
           <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent font-semibold">
             {displayedText}
-            <span className="inline-block w-0.5 bg-purple-400 animate-blink ml-1" style={{ height: "0.9em" }} />
+            <span
+              className="inline-block w-0.5 bg-purple-400 animate-blink ml-1"
+              style={{ height: "0.9em" }}
+            />
           </span>
         </div>
 
@@ -76,9 +86,10 @@ export default function HeroSection({ scrollToSection }) {
         </div>
 
         <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Computer Science degree holder with years of experience in full-stack development.
-          Passionate about creating robust systems and continuously learning new
-          technologies to build efficient and scalable applications.
+          Computer Science degree holder with years of experience in full-stack
+          development. Passionate about creating robust systems and continuously
+          learning new technologies to build efficient and scalable
+          applications.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto">
@@ -97,14 +108,17 @@ export default function HeroSection({ scrollToSection }) {
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
           <button
             onClick={() => scrollToSection("projects")}
-            className="group bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 flex items-center justify-center"
+            className="group bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 flex items-center justify-center cursor-pointer"
           >
             View My Work
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+            <ArrowRight
+              className="ml-2 group-hover:translate-x-1 transition-transform"
+              size={20}
+            />
           </button>
           <button
             onClick={handleDownloadResume}
-            className="border-2 border-purple-400/50 text-purple-400 hover:bg-purple-400/10 hover:border-purple-400 px-8 py-4 rounded-2xl font-semibold text-lg transition-all hover:scale-105 flex items-center justify-center"
+            className="border-2 border-purple-400/50 text-purple-400 hover:bg-purple-400/10 hover:border-purple-400 px-8 py-4 rounded-2xl font-semibold text-lg transition-all hover:scale-105 flex items-center justify-center cursor-pointer"
           >
             <Download className="mr-2" size={20} />
             Download Resume

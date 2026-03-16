@@ -30,7 +30,9 @@ export default function ContactSection() {
       }
     } catch (error) {
       console.error("Error:", error);
-      alert(`Failed to send message. Please email me directly at ${social.email}`);
+      alert(
+        `Failed to send message. Please email me directly at ${social.email}`,
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -44,7 +46,8 @@ export default function ContactSection() {
             Let's Connect
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            I'm always interested in new opportunities and conversations about technology
+            I'm always interested in new opportunities and conversations about
+            technology
           </p>
         </div>
 
@@ -53,7 +56,10 @@ export default function ContactSection() {
             href={`mailto:${social.email}`}
             className="group bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl rounded-2xl p-6 border border-white/8 hover:border-green-400/30 transition-all text-center"
           >
-            <Mail className="text-green-400 mx-auto mb-4 group-hover:scale-110 transition-transform" size={40} />
+            <Mail
+              className="text-green-400 mx-auto mb-4 group-hover:scale-110 transition-transform"
+              size={40}
+            />
             <h3 className="text-white font-semibold mb-1">Email</h3>
             <p className="text-gray-400 text-sm">{social.email}</p>
           </a>
@@ -64,7 +70,10 @@ export default function ContactSection() {
             rel="noopener noreferrer"
             className="group bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl rounded-2xl p-6 border border-white/8 hover:border-blue-400/30 transition-all text-center"
           >
-            <Linkedin className="text-blue-400 mx-auto mb-4 group-hover:scale-110 transition-transform" size={40} />
+            <Linkedin
+              className="text-blue-400 mx-auto mb-4 group-hover:scale-110 transition-transform"
+              size={40}
+            />
             <h3 className="text-white font-semibold mb-1">LinkedIn</h3>
             <p className="text-gray-400 text-sm">Connect with me</p>
           </a>
@@ -75,14 +84,19 @@ export default function ContactSection() {
             rel="noopener noreferrer"
             className="group bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl rounded-2xl p-6 border border-white/8 hover:border-purple-400/30 transition-all text-center"
           >
-            <Github className="text-purple-400 mx-auto mb-4 group-hover:scale-110 transition-transform" size={40} />
+            <Github
+              className="text-purple-400 mx-auto mb-4 group-hover:scale-110 transition-transform"
+              size={40}
+            />
             <h3 className="text-white font-semibold mb-1">GitHub</h3>
             <p className="text-gray-400 text-sm">Check my code</p>
           </a>
         </div>
 
         <div className="bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl rounded-3xl p-8 border border-white/8">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">Send a Message</h3>
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">
+            Send a Message
+          </h3>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid md:grid-cols-2 gap-5">
               <input
@@ -122,7 +136,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting || submitted}
-                className="group bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white px-10 py-4 rounded-xl font-semibold transition-all hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="group bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white px-10 py-4 rounded-xl font-semibold transition-all hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
               >
                 {isSubmitting ? (
                   <>

@@ -47,7 +47,7 @@ export default function BlogSection() {
                       </span>
                     </div>
                   </div>
-                  
+
                   <div className="p-6">
                     <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors line-clamp-2">
                       {post.title}
@@ -69,10 +69,13 @@ export default function BlogSection() {
 
                     <button
                       onClick={() => handleClick(post.id)}
-                      className="text-purple-400 hover:text-purple-300 transition-colors font-medium flex items-center gap-1 text-sm group/btn"
+                      className="text-purple-400 hover:text-purple-300 transition-colors font-medium flex items-center gap-1 text-sm group/btn cursor-pointer"
                     >
                       Read More
-                      <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight
+                        size={14}
+                        className="group-hover/btn:translate-x-1 transition-transform"
+                      />
                     </button>
                   </div>
                 </article>
